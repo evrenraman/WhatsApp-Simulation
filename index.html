@@ -138,10 +138,15 @@
     const initialDelay = 2000; // First message delay
     setTimeout(sendNextMessage, initialDelay);
 
-    // **STOP after 5 minutes**
+    // **STOP after 5 minutes and move to the next node**
     const stopChat = setTimeout(() => {
         chatActive = false;
         setMessages((prev) => [...prev, { id: 999, sender: "System", text: "Chat session has ended." }]);
+        if (typeof gorilla !== 'undefined') {
+            gorilla.finish();
+        } else {
+            console.warn('Gorilla API is not available.');
+        }
     }, 300000); // 5 minutes (300,000ms)
 
     return () => clearTimeout(stopChat);
