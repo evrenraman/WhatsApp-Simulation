@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp Chat Simulation</title>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
         body {
@@ -42,6 +42,7 @@
             background: #E5DDD5;
             display: flex;
             flex-direction: column;
+            scroll-behavior: smooth;
         }
         .message {
             max-width: 75%;
@@ -105,7 +106,13 @@
                 
                 const initialDelay = 2000;
                 setTimeout(sendNextMessage, initialDelay);
-                
+
+                // Scroll to the bottom as messages appear
+                const observer = new MutationObserver(() => {
+                    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+                });
+                observer.observe(document.getElementById("root"), { childList: true, subtree: true });
+
                 // Stop after 5 minutes and move to next Gorilla node
                 const stopChat = setTimeout(() => {
                     chatActive = false;
@@ -117,7 +124,10 @@
                     }
                 }, 300000); // 5 minutes (300,000ms)
                 
-                return () => clearTimeout(stopChat);
+                return () => {
+                    clearTimeout(stopChat);
+                    observer.disconnect();
+                };
             }, []);
             
             return (
@@ -138,7 +148,8 @@
             );
         }
         
-        ReactDOM.createRoot(document.getElementById("root")).render(<WhatsAppSimulation />);
+        ReactDOM.render(<WhatsAppSimulation />, document.getElementById("root"));
     </script>
 </body>
 </html>
+
