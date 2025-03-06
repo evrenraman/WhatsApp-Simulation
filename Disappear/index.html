@@ -72,19 +72,73 @@
         function WhatsAppSimulation() {
             const initialMessages = [
                 { id: 1, sender: "Alex", text: "Last night was WILD! What did everyone get up to after we left the party? 😜🎃" },
-                { id: 2, sender: "Charlie", text: "Let’s just say things got a little out of hand... I heard someone’s car wasn’t where it was supposed to be. 😬" },
-                { id: 3, sender: "Jess", text: "WHAT?! A missing car? I heard about that too!" },
-                { id: 4, sender: "Sam", text: "Uh... yeah, so about that..." },
-                { id: 5, sender: "Charlie", text: "But, yeah, about the car... let’s just say it’s not exactly where the owner left it anymore 🤫" }
-            ];
+    { id: 2, sender: "Alex", text: "Honestly, I feel like I missed out on something crazy..." },
+    { id: 3, sender: "Alex", text: "Spill!" },
+    { id: 4, sender: "Charlie", text: "Let’s just say things got a little out of hand... I heard someone’s car went missing. 😬" },
+    { id: 5, sender: "Charlie", text: "Yeah, it was like chaos after you guys left. You won’t believe it" },
+    { id: 6, sender: "Jess", text: "Wait, WHAT?! Missing car? I heard about that too!" },
+    { id: 7, sender: "Charlie", text: "Lol" },
+    { id: 8, sender: "Jess", text: "Are you serious, though? Someone actually took a car??" },
+    { id: 9, sender: "Jess", text: "Who even does that?!" },
+    { id: 10, sender: "Sam", text: "Uh... yeah, so about that..." },
+    { id: 11, sender: "Sam", text: "I, uh, may or may not have borrowed Jodie's grey Ford for a little ride..." },
+    { id: 12, sender: "Sam", text: "But come on, bros, honestly, it’s Halloween!" },
+    { id: 13, sender: "Sam", text: "It was just sitting there with the keys in it, like it was practically asking for it 😅" },
+    { id: 14, sender: "Alex", text: "Woah lol" },
+    { id: 15, sender: "Alex", text: "Like, you actually took someone’s car? Dude, that’s next-level" },
+    { id: 16, sender: "Sam", text: "I was gonna bring it back! Just, uh... ran out of time" },
+    { id: 17, sender: "Sam", text: "It’s fine, though. No damage or anything. Just a little detour, you know?" },
+    { id: 18, sender: "Charlie", text: "Dude, that’s literally grand theft auto" },
+    { id: 19, sender: "Charlie", text: "But, yeah, about the car... let’s just say it’s not exactly where the owner left it anymore 🤫" },
+    { id: 20, sender: "Jess", text: "DUDE" },
+    { id: 21, sender: "Charlie", text: "Relax! It’s parked behind the old shopping centre" },
+    { id: 22, sender: "Charlie", text: "You know that row of dumpsters near the back alley?" },
+    { id: 23, sender: "Charlie", text: "Yeah, it’s kind of tucked away there. Oh, and before you freak out... I might’ve added a little Halloween flair to it 👻" },
+    { id: 24, sender: "Charlie", text: "Just a few cobwebs and a skeleton hanging from the rearview mirror, nothing major. Honestly, it looks pretty cool now, if I do say so myself! 🎃⚡️" },
+    { id: 25, sender: "Jess", text: "WHAT?!" },
+    { id: 26, sender: "Jess", text: "You turned the stolen car into a Halloween decoration?" },
+    { id: 27, sender: "Jess", text: "Are you insane??" },
+    { id: 28, sender: "Alex", text: "Sam... my dude... this is like straight-up something out of a Netflix series" },
+    { id: 29, sender: "Alex", text: "Are you sure no one saw you?" },
+    { id: 30, sender: "Charlie", text: "Guys, calm down! It was late, it’s like an urban legend waiting to happen" },
+    { id: 31, sender: "Sam", text: "Are we robbing a bank next??" },
+    { id: 32, sender: "Charlie", text: "Ooh, now there’s an idea for next Halloween... jokes hehehe 🤫" }
+];
 
             const updatedMessages = [
-                { id: 1, sender: "Alex", text: "Wait... I'm getting a weird feeling about this. Are you SURE no one saw you?" },
-                { id: 2, sender: "Charlie", text: "Relax! It’s totally fine. Unless someone checked the cameras... 👀" },
-                { id: 3, sender: "Jess", text: "WAIT—what cameras?!?!" },
-                { id: 4, sender: "Sam", text: "Bro... tell me you're joking right now. 😳" },
-                { id: 5, sender: "Charlie", text: "I mean... cameras don’t record *everything*... right?" }
-            ];
+                { id: 1, sender: "Alex", text: "Last night was WILD! What did everyone get up to after we left the party? 😜🎃" },
+  { id: 2, sender: "Alex", text: "Honestly, I feel like I missed out on something crazy..." },
+  { id: 3, sender: "Alex", text: "Spill!" },
+  { id: 4, sender: "Charlie", text: "Let’s just say things got a little out of hand... I heard someone’s car wasn’t where it was supposed to be. 😬" },
+  { id: 5, sender: "Charlie", text: "Yeah, it was like chaos after you guys left. You won’t believe it." },
+  { id: 6, sender: "Jess", text: "Wait, WHAT?! A missing car? I heard about that too!" },
+  { id: 7, sender: "Charlie", text: "Lol" },
+  { id: 8, sender: "Jess", text: "Are you serious, though? Someone actually moved a car??" },
+  { id: 9, sender: "Jess", text: "Who even does that?!" },
+  { id: 10, sender: "Sam", text: "Uh... yeah, so about that..." },
+  { id: 11, sender: "Sam", text: "I, uh, may have seen someone take Jodie's red Ford for a little ride..." },
+  { id: 12, sender: "Sam", text: "But I guess it’s Halloween!" },
+  { id: 13, sender: "Sam", text: "People do wild stuff" },
+  { id: 14, sender: "Alex", text: "Woah lol" },
+  { id: 15, sender: "Alex", text: "Like, someone actually took a car? That’s next-level" },
+  { id: 16, sender: "Sam", text: "I mean, cars get driven places, right?" },
+  { id: 17, sender: "Sam", text: "Plus people get crazy on Halloween" },
+  { id: 18, sender: "Sam", text: "Pretty sure it’s fine, though. No damage or anything. Just a little detour, you know?" },
+  { id: 19, sender: "Charlie", text: "Either way, it’s not exactly where the owner left it anymore 🤫" },
+  { id: 20, sender: "Jess", text: "DUDE" },
+  { id: 21, sender: "Charlie", text: "Relax! It’s parked behind the old shopping centre" },
+  { id: 22, sender: "Charlie", text: "You know that row of dumpsters near the back alley?" },
+  { id: 23, sender: "Charlie", text: "Yeah, it’s kind of tucked away there. Oh, and before you freak out... someone might’ve added a little Halloween flair to it 👻 Just a few cobwebs and a skeleton hanging from the rearview mirror, nothing major. Honestly, it looks pretty cool now, if I do say so myself! 🎃⚡️" },
+  { id: 24, sender: "Jess", text: "WHAT?!" },
+  { id: 25, sender: "Jess", text: "So now it’s a Halloween decoration??" },
+  { id: 26, sender: "Jess", text: "Are you insane??" },
+  { id: 27, sender: "Alex", text: "This is like straight-up something out of a Netflix series" },
+  { id: 28, sender: "Alex", text: "Are you sure no one saw anything?" },
+  { id: 29, sender: "Charlie", text: "Guys, calm down! It was late, it’s like an urban legend waiting to happen" },
+  { id: 30, sender: "Sam", text: "Are we robbing a bank next??" },
+  { id: 31, sender: "Charlie", text: "Ooh, now there’s an idea for next Halloween... jokes hehehe 🤫" }
+];
+        
             
             const [messages, setMessages] = useState([]);
             const [isTyping, setIsTyping] = useState(false);
