@@ -173,8 +173,11 @@
 
                 // **At 2.5 minutes (150,000ms), OVERWRITE messages**
                 const updateMessagesTimeout = setTimeout(() => {
-                    setMessages(updatedMessages);
-                }, 150000); // 2.5 minutes
+                chatActive = false;          // stops the loop
+                setIsTyping(false);          // clears the typing indicator
+                setMessages(updatedMessages); // overwrites cleanly
+                    }, 150000);
+
 
                 // **Stop after 5 minutes and move to next Gorilla node**
                 const stopChat = setTimeout(() => {
